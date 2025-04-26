@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>个人介绍</title>
+</head>
+<body>
+    <img src="./牛爷爷.jpg" width="200">
+        <h2>个人介绍：灰太狼</h2>
+    <ul>
+        <li>年龄：20</li>
+        <li>性别：男</li>
+        <li>爱好：吃羊、写代码</li>
+        <li>家乡：青青草原</li>
+    </ul>
+        <hr>
+        <h2>给未来自己的一点建议：</h2>
+        <p>你觉得自己哪方面需要改进加强的？</p>
+        <p>例子：</p>
+        <ol>
+            <li>希望吃到懒洋洋</li>
+            <li>希望吃到沸羊羊</li>
+            <li>希望吃到暖洋洋</li>
+            <li>希望吃到美羊羊</li>
+            <li>希望吃到喜羊羊</li>
+        </ol>
+        <a href="">点击预测一下你以后能不能吃到羊</a>
+</body>
+</html>
