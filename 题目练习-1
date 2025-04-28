@@ -1,0 +1,35 @@
+    // //    第一题
+    // let count = function Count(arr) {
+    //     let sum = 0
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (arr[i] % 2 != 0) {
+    //             sum += arr[i]
+    //         }
+    //     }
+    //     return sum
+    // }
+    // let arr=[1,2,3,4,5,6,7,10,20,30,40,41,43,45,78];
+    // console.log(`所有奇数和为：${count(arr)}`);
+    //
+    // //    第二题
+    //     let num = Number(prompt('请输入一个数字：'))
+    //     num<10?console.log('你输入的数字是：0'+num):console.log(`你输入的数字是${num}`)
+    //
+    //
+    // //    第三题
+    // function deposit(pri=0, rate=0, year=0){
+    //         let interest = 0
+    //         for (let i = 0; i<year; i++){
+    //             interest += pri*rate
+    //             pri += pri*rate
+    //             console.log(`第${i+1}年本金为：${pri}元`)
+    //         }
+    //         return [pri, interest]
+    // }
+    // let principal = 30000, ann_rate = 0.03
+    // let arr_1 = deposit(principal, ann_rate, 10)
+    // console.log(`10年后共收获利息${arr_1[1]}元`);
+
+    // console.log(document)
+    // let di1 = document.querySelector('.di1')
+    // print(di1)
