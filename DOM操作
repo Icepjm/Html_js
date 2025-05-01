@@ -1,0 +1,60 @@
+<!DOCTYPE html> <!--文档类型声名-->
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p class="text">这是p标签</p>
+    <div id="d1">盒子1</div>
+    <div id="d2">盒子2</div>
+    <div id="d3">盒子3</div>
+    <div id="d4" class="wrap">我的盒子容器</div>
+    <h2 class="wrap">我是二级标签wrap类名</h2>
+    <ul>
+        <li id="ui1">唱</li>
+        <li id="ui2">跳</li>
+        <li id="ui3">篮球</li>
+        <li id="ui4">爬山</li>
+        <li id="ui5">睡懒觉</li>
+    </ul>
+    <ol>
+        <li id="oi1">英雄联盟</li>
+        <li id="oi2">三角洲</li>
+        <li id="oi3">永杰无间</li>
+        <li id="oi4">王者荣耀</li>
+        <li id="oi5">csgo</li>
+    </ol>
+    <script>
+    //     console.log(document)
+    // //    1.通过id获取对应标签节点
+    //     let id_name_1 = document.getElementById('ui1')
+    //     console.log(id_name_1)
+    //     let id_name_2 = document.getElementById('d1')
+    //     console.log(id_name_2)
+    // //    2.通过标签名获取对应节点
+    //     let label_name_1 = document.getElementsByTagName('div')
+    //     console.log(label_name_1) // 返回数组
+    //     for(let i =0; i<label_name_1.length;i++){
+    //         console.log(label_name_1[i]) // 依次获取各个节点
+    //     }
+    // //    3.通过类名获取标签节点
+    //     let class_name_1 = document.getElementsByClassName('wrap')
+    //     console.log(class_name_1) // 返回数组
+    //     for(let i=0;i<class_name_1.length; i++){
+    //         console.log(class_name_1[i]) // 获取各个节点
+    //     }
+    //    4，通过css选择器获取对应节点
+    //     let  css_selector = document.querySelector('li')
+    //     console.log(css_selector[2]) // undefined
+    //     console.log(css_selector) // 只返回第一个节点
+    //     let css_selector_all = document.querySelectorAll('ol>li') // li:所有li,ol>li:ol的子元素li
+    //     console.log(`li数组：${css_selector_all}`)
+    //     for(let i=0;i<css_selector_all.length;i++){
+    //         console.log(css_selector_all[i])
+    //     }
+            
+
+    </script>
+</body>
+</html>
