@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*设置图片大小*/
+        .wrap>img{
+            width: 300px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+   <button class="add">点击我添加图片</button>
+   <div class="wrap">
+
+   </div>
+    <script>
+       // alert('你好文本');
+       // prompt('请输入内容123')
+
+        // 定时器操作
+        function fn() {
+            console.log('恭喜大家,明天又快放假了');
+        }
+        // fn();
+        // 一次性定时器
+        // setTimeout(fn,5000);
+        //第一个: 回调函数
+        //第二个: 执行时间  时间单位毫秒  1秒=1000毫秒
+
+        // 可以循环多次时间的定时器
+        // setInterval(fn,3000);
+
+        /*
+        * 1.先获取你要操作的节点
+        * */
+        let add=document.querySelector('.add');
+        let wrap=document.querySelector('.wrap');
+
+        // 2.点击添加按钮进行给wrap新增图片
+        // add.onclick=function () {
+        //     // console.log('点击事件')
+        //     //3.添加我需要插入的节点 img标签
+        //     let Pic=document.createElement('img');
+        //     //4.设置图片的地址
+        //     Pic.src='./1.jpg';
+        //     //5.给wrap盒子 进行添加图片
+        //     wrap.appendChild(Pic);
+        // }
+
+
+
+        // 升级版 点击按钮之后自动每5秒生成一张图片
+        function Add() {
+            let Pic=document.createElement('img');
+            Pic.src='./1.jpg';
+            wrap.appendChild(Pic);
+        }
+
+        // 点击按钮之后就会自动每5秒生成一张图片
+        add.onclick=function () {
+            setInterval(Add,5000);//每间隔5秒去执行 生成img标签函数方法
+            console.log('我好帅啊');
+        }
+
+
+    </script>
+</body>
+</html>
