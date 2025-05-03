@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .time>b{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+     <h2 class="time">距离放假还有<b></b>秒?</h2>
+     <script>
+         // 倒计时案例
+         let time=document.querySelector('.time>b');
+         console.log(time);
+         //设置初始倒计时时间
+         let num=20;
+         time.innerHTML=num;
+
+         function Time() {
+             time.innerHTML=num;
+             // 缩减时间
+             num--;
+
+             // 判断一下 num值到了0  就关闭定时器
+             if(num<0){
+                 clearInterval(timer);//关闭定时器方法
+                 // 倒计时结束之后  去就可以出去玩了  看b站视频
+                 location.href='https://www.bilibili.com/video/BV19FoLY7EHB/?spm_id_from=333.1007.tianma.1-2-2.click'
+
+             }
+         }
+         // Time();
+         //开启定时器 让倒计时自动去执行
+         let timer=setInterval(Time,1000);
+
+         console.log(location);//用户当前 url地址信息
+         // location.href='https://www.bilibili.com/video/BV19FoLY7EHB/?spm_id_from=333.1007.tianma.1-2-2.click'
+
+         console.log(navigator);//浏览器配置信息
+     </script>
+</body>
+</html>
