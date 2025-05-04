@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p class="time"></p>
+<script>
+    let Time = document.querySelector('.time')
+
+    function Current_data() {
+        let date = new Date()
+        let year = date.getFullYear()
+        let month = date.getMonth()
+        //一个月中的第几天
+        let data = date.getDate()
+        //周几
+        let week = date.getDay()
+        let hour = date.getHours()
+        let minute = date.getMinutes()
+        let second = date.getSeconds()
+        let str = `${year}年-${month}月-${data}日-周${week}-${hour}点-${minute}分-${second}秒`
+        Time.innerText = str
+    }
+    Time.innerHTML='<p>嵌套</p>' // 会解析<p></p>标签，只会输出嵌套
+    Time.innerText='<p>嵌套</p>' // 不会解析<p></p>标签，会带着一起输出
+    setTimeout(function(){
+      console.log('等待：')
+        Current_data()
+        setInterval(Current_data, 1000) // 先等待后执行
+    },3000) // 3秒后开始倒计时
+
+</script>
+</body>
+</html>
