@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{
+            color:red;
+        }
+    </style>
+    <script src="../JQuery.js"></script>
+</head>
+<body>
+    <h1>
+        黎明塔
+    </h1>
+    <ul>
+        <li>王志</li>
+        <li>琉璃</li>
+        <li>胖子</li>
+        <li>樱</li>
+        <li>老何</li>
+    </ul>
+    <div class="N_org">黎明城</div>
+    <input type="text" >
+</body>
+    <script>
+        /*
+        * outerHTML 属性代表元素的完整 HTML 表示，
+        * 包括元素本身及其所有子元素。因此，控制台会
+        * 显示这个 DOM 元素的 HTML 标签和内容，就
+        * 像它在页面源代码中一样。
+        * */
+
+        /*
+        * console.log($('h1').get(0).outerHTML);
+        * $('h1') 创建了一个 jQuery 对象，包含了所有 <h1> 元素的集合。
+        * .get(0) 从 jQuery 集合中获取了第一个 <h1> 元素的原始 DOM 对象。
+        * .outerHTML 是 DOM 对象的属性，它返回元素的完整 HTML 表示，包括元素本身及其所有子元素。
+        * 这行代码会正确地输出第一个 <h1> 元素的完整 HTML 字符串。
+        *
+        * console.log($('h1').outerHTML);
+        * $('h1') 同样创建了一个 jQuery 对象，包含了所有 <h1> 元素的集合。
+        * 然而，.outerHTML 并不是 jQuery 对象的属性，而是 DOM 元素的属性。
+        * 因此，尝试在 jQuery 对象上直接调用 .outerHTML 会返回 undefined，
+        * 因为 jQuery 对象没有这个属性。
+        * */
+        console.log($('h1').get(0).outerHTML);
+            let ul_li = document.querySelectorAll('ul>li') // 返回NodeList对象 不是DOM对象，没有outerHTML属性
+            console.log(ul_li[-1]) // 下标超出会显示undefined
+        // console.log($('h1'));
+        $('input').val('生存点')
+    </script>
+</html>
