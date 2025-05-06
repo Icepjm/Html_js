@@ -1,0 +1,77 @@
+<!--
+AJAX的主要优点包括：
+提高用户体验：通过减少页面刷新和加载时间，AJAX使得网页更加流畅和响应迅速。
+减少服务器负载：由于只发送和接收必要的数据，而不是整个页面，AJAX可以减少服务器的负载。
+提高可维护性：通过将数据交换和页面更新逻辑分离，AJAX使得代码更加模块化和易于维护。
+需要注意的是，AJAX并不是一种编程语言，而是一种使用现有技术（如JavaScript、XMLHttpRequest等）的组合来实现特定目的的方法。
+
+JSON:
+    JSON 的全称是 JavaScript Object Notation。(JavaScript 对象表示法)
+
+序列化 (Serialization)：
+    序列化是将对象的状态信息转换为可以存储或传输的形式的过程。通常，这种形式是字节流或字符流。
+    序列化的主要目的是为了将对象保存到存储设备（如硬盘）或通过网络传输。例如，当你想要将一个对象保存到文件或数据库，或者通过网络发送给另一个应用程序时，你需要先将对象序列化。
+    在序列化过程中，对象的结构、类型信息和数据都被转换成一种特定的格式，如 JSON、XML 或二进制格式。
+反序列化 (Deserialization)：
+    反序列化是序列化的逆过程，即从存储或传输的形式（如字节流或字符流）中重建对象的过程。
+    当你从文件、数据库或网络接收到序列化的数据时，你需要通过反序列化来恢复原始的对象。
+    反序列化将特定的格式（如 JSON、XML 或二进制格式）转换回对象，使得程序可以再次使用这些对象。
+
+xhr.responseText：返回的是一个字符串，包含了服务器响应的文本内容。这是最常用的属性，用于处理文本数据。
+xhr.response：返回的是一个更通用的响应体，其类型取决于 responseType 属性的设置。
+    它可以是一个字符串、一个 ArrayBuffer、一个 Blob、一个 Document，或者一个 JSON 对象，
+    具体取决于你如何设置 responseType。
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .vid{
+            width: 300px;
+            height: 500px;
+        }
+    </style>
+    <script src="../JQuery.js"></script>
+</head>
+<body>
+    <video src="" controls class="vid"></video>
+    <button class="but">刷新视频</button>
+    <script>
+        let mv = document.querySelector('.vid')
+        let but = document.querySelector('.but')
+        function Refresh(){
+                    let xhr=new XMLHttpRequest()
+        /*
+        * Cross-Origin Resource Sharing，跨源资源共享）是一种基于 HTTP 头的机制，
+        * 它允许一个网页上的 JavaScript 请求访问来自不同源（域、协议或端口）的资源。
+        * 这个机制是浏览器的一种安全特性，用于防止恶意网站读取用户数据。
+        * */
+        // xhr.open('get','https://www.baidu.com/')
+        xhr.open('get', 'https://api.kuleu.com/api/MP4_xiaojiejie?type=json')
+        // console.log(xhr.send());  //输出undefined 因为xhr.send()无返回值
+        xhr.send()
+        xhr.onload = function(){
+            if(xhr.status===200){
+                 // console.log(xhr.responseText);
+                 try{
+                     let data = JSON.parse(xhr.response)
+                     console.log('data:',data)
+                     mv.src=data.mp4_video
+                 }catch(e){
+                     console.log('解析JSON失败')
+                 }
+            }
+        }
+        }
+        Refresh()
+        but.onclick=function(){
+            Refresh()
+        }
+        // $('.but').on('click',function(){
+        //     Refresh()
+        // })
+    </script>
+</body>
+</html>
