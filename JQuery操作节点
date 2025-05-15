@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../JQuery.js"></script>
+    <style>
+        #box1{
+            color:red;
+        }
+        .box-1{
+            color:blue;
+        }
+        #box1{
+            color:black;
+        }
+        #box2{
+            color:orange;
+        }
+        #box3{
+            color:pink;
+        }
+        #box4{
+            color:salmon;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <div class="box">
+        <p>------------------</p>
+        <p>------------------</p>
+
+    </div>
+
+    <div class="box">
+           <p>------------------</p>
+           <p>------------------</p>
+    </div>
+
+
+    <div class="box">
+           <p>------------------</p>
+           <p>------------------</p>
+    </div>
+    <button id="bt1">给大哥赐座</button>
+    <button id="bt2">小弟给大哥请安</button>
+    <script>
+        let node1 = document.querySelector('.box')
+        let node2 = document.createElement('p')
+        node2.innerText = '我真的是正经生意人'
+        node1.appendChild(node2)
+
+        $('.box').append('<h2>慢慢地进村</h2>')
+        $('.box').append('打枪的不要')
+        $('.box').prepend('跪下，给哥唱征服')
+        let arr=[]
+        for(let j=1;j<5;j++){
+            arr[j]=`<h1>我是${j}哥</h1>`
+        }
+        for(let i =1;i<5;i++){
+            $('.box').append(arr[i])
+            // $('.box').prepend(arr[i])
+        }
+        $('.box').prepend('----------top分界------------')
+        $('.box').append('-----------bottom分界---------')
+        $('.box').before('老爹不喜欢')
+        let sp="<span id='sp1'>我还是老弟啊</span>"
+        $('.box').after(sp)
+        let box_2=$('<div class=".box_2"></div>>')
+        box_2.append('sp')
+        // $('#bt1').click(function(){
+        //     // $('.box').addId('box1') //JQuery中没有addId方法
+        //     $('.box').attr('id','box1')
+        //     console.log('按钮点击')
+        // } )
+        $('#bt1').click(function(){
+            $('.box').each(function(index_each){
+                $(this).attr('id','box'+(index_each+1)) //注意加括号 this不能换成 .box否则属性id加不上去
+                console.log(index_each)
+                // console.log($('.box').id) //不能直接这样输出所有id()
+                // var id_list=$('.box').map(function(){
+                //     return $(this).attr('id')
+                // }).get()//.filter(function(id){
+                //     // return  id!==undefined && id!==''
+                // //}) filter函数返回bool类型 1-保留， 0-过滤（删除）；
+                // console.log(id_list)
+            })
+            // $('.box').each(function(){
+            //     console.log($(this).attr('id'))
+            // })
+                var id_list=$('.box').map(function(){
+                    return $(this).attr('id')
+                }).get()  // 返回dom元素数组
+                var id_list_1=$('.box').map(function(){
+                    return $(this).attr('id')
+                }) //返回JQuery元素数组
+
+                console.log(id_list)
+                console.log(id_list_1)
+
+        })
+
+    </script>
+</body>
+</html>
